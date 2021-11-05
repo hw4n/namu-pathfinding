@@ -1,0 +1,11 @@
+{
+  "name": "namu-pathfinding",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.12"
+  },
+  "type": "module"
+}
