@@ -5,7 +5,7 @@ export function getEveryLinkFromText(text) {
   let lastfound;
 
   while ((lastfound = re.exec(text)) !== null) {
-    links.push(lastfound[1]);
+    result.push(lastfound[1]);
   }
 
   return result;

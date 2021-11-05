@@ -3,13 +3,14 @@ dotenv.config();
 
 import mongoose from 'mongoose';
 
-mongoose.connect(process.env.DBURI).then(() => {
+await mongoose.connect(process.env.DBURI).then(() => {
   console.log('database connected');
 }).catch(err => {
   console.log(err);
 });
 
-import namu from './model/index.js';
-namu.find({ title: "JavaScript" }).then(data => {
-  console.log(data);
-});
+import { getNamuDocumentByTitle } from './helper/db.js';
+import { getEveryLinkFromText } from './helper/namu.js';
+
+const { text } = await getNamuDocumentByTitle('JavaScript');
+console.log(getEveryLinkFromText(text));
