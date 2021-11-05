@@ -46,6 +46,7 @@ async function namuBFS(startTitle, destTitle) {
     if (visited.has(currentTitle)) {
       continue;
     }
+    visited.add(currentTitle);
     const namuDocument = await getNamuDocumentByTitle(currentTitle);
     if (namuDocument === null) {
       continue;
